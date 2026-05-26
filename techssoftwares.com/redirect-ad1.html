@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Advertisement - Gigachad</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:0;padding:0;background:#f7f7f7}
+    .header{background:#1f2024;color:#fff;padding:16px}
+    .logo{font-weight:700;font-size:22px}
+    .container{max-width:880px;margin:30px auto;padding:20px;background:#fff;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+    .ad-box{width:100%;height:300px;background:#eee;border:2px dashed #ccc;display:flex;align-items:center;justify-content:center;font-weight:700;color:#666}
+    .timer{font-size:20px;margin-top:16px}
+    .continue-btn{margin-top:18px;padding:10px 18px;background:#2b8cff;color:#fff;border:0;border-radius:6px;cursor:pointer;display:none}
+    .continue-btn[disabled]{opacity:0.6;cursor:default}
+  </style>
+</head>
+<body>
+  <div class="header"><a href="/techssoftwares.com/" style="color:#fff;text-decoration:none;"><span class="logo">Gigachad</span></a></div>
+  <div class="container">
+    <h2>Advertisement</h2>
+    <p>This page contains a short ad window — you will be able to continue after the timer finishes.</p>
+    <div class="ad-box">Dummy Ad Area (300x250)</div>
+    <div class="timer">Ad ends in: <span id="giga-count">30</span> seconds</div>
+    <button id="giga-ad-continue" class="continue-btn" disabled>Continue to article</button>
+  </div>
+
+  <script>
+    (function(){
+      var t=30; var el=document.getElementById('giga-count'); var btn=document.getElementById('giga-ad-continue');
+      el.textContent = t;
+      var iv=setInterval(function(){ t--; if(t<=0){ clearInterval(iv); el.textContent = 0; btn.disabled = false; btn.style.display='inline-block'; document.querySelector('.timer').textContent='Ad finished'; } else { el.textContent = t; } },1000);
+      btn.addEventListener('click', function(){ if(!btn.disabled) window.location.href='/techssoftwares.com/tech-article-1/'; });
+    })();
+  </script>
+</body>
+</html>
