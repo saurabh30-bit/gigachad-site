@@ -1,11 +1,4 @@
 {
   "version": 2,
-  "name": "gigachad-site",
-  "builds": [
-    { "src": "techssoftwares.com/**", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/$", "dest": "/techssoftwares.com/index.html" },
-    { "src": "^/(.*)$", "dest": "/techssoftwares.com/$1" }
-  ]
+  "name": "gigachad-site"
 }
